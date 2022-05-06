@@ -44,7 +44,7 @@ fruit_name = 'banana'
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
 my_cur.execute("SELECT * from fruit_load_list where fruit_name like fruit_name")
-my_data_rows = my_cur.fetchall()
+my_data_rows = my_cur.fechone()
 streamlit.dataframe(my_data_rows)
 streamlit.write('Thanks for adding ', fruit_add)
 
