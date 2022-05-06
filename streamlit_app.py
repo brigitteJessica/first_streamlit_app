@@ -43,7 +43,7 @@ fruit_add = streamlit.text_input('What fruit would you like to add?', 'banana')
 fruit_name = 'banana'
 my_cn = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur_data = my_cn.cursor()
-my_cur_data.execute("SELECT * from fruit_load_list where fruit_name like fruit_name")
+my_cur_data.execute("SELECT * from fruit_load_list where fruit_name like 'banana'")
 my_data = my_cur_data.fetchall()
 streamlit.dataframe(my_data)
 streamlit.write('Thanks for adding ', fruit_add)
